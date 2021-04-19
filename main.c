@@ -4,69 +4,35 @@
 #include "uart.h"
 #include <stdio.h>
 #include <math.h>
+#include "Config.h"
+#include "pid.h"
+#include "Tuning.h"
 
-#define ENABLE 1
-#define SPEED 30
-
-#define DARK_THRESHOLD 0.2
-#define CARPET_THRESHOLD 120
-#define STEERING_MULTIPLIER .0035
-#define STEERING_START 0.4
-
-#define REQUIRED_DIFF 5
-static float I = STEERING_START;
-static float compute_direction(void)
+static void measure_camera(float* brightness_error, int* num_dark)
 {
-	
-	int num_dark = 0;
-	// first check for carpet
-		for(int i = 0; i < 127; i++)
+	*num_dark = 0;
+	float left_sum = 0;
+	float right_sum = 0;
+
+	for(int i = 0; i < 127; i++)
+	{
+		float light_level = Camera_get_light_level(i);
+		if (light_level < DARK_THRESHOLD)
 		{
-			if (Camera_get_light_level(i) < DARK_THRESHOLD)
-			{
-				num_dark++;
-			}
+			(*num_dark)++;
 		}
 		
-		if (num_dark > CARPET_THRESHOLD)
+		if (i < 127/2)
 		{
-			DriveMotorA_set_duty_cycle(0, DIRECTION_FORWARD);
-			DriveMotorB_set_duty_cycle(0, DIRECTION_FORWARD);
-			DriveMotorA_enable(0);
-			DriveMotorB_enable(0);
-		}
-		
-		// sum pixels on each side of camera
-		float left_sum = 0;
-		float right_sum = 0;
-		for (int i = 0; i < 127; i++)
-		{
-			if (i > 127/2)
-			{
-				left_sum += Camera_get_light_level(i);
-			}
-			else
-			{
-				right_sum += Camera_get_light_level(i);
-			}
-		}
-		float steering_control;
-		float steering_diff = left_sum - right_sum;
-		if (fabs(steering_diff) >= REQUIRED_DIFF)
-		{
-			steering_control = (steering_diff) * STEERING_MULTIPLIER;
+			right_sum += light_level;
 		}
 		else
 		{
-			steering_control = 0;
-			I = STEERING_START;
+			left_sum += light_level;
 		}
-		float retval = I + steering_control;
-		I += steering_control;
-		
-		if (I > 1) I = 1;
-		else if (I < 0) I = 0;
-		return retval;
+	}
+	
+	*brightness_error = left_sum - right_sum;
 }
 
 /**
@@ -83,7 +49,7 @@ void delay(int del){
 
 int main(void)
 {
-	uart0_init();
+	uart3_init();
 	uart0_put("Waddup\r\n");
 	DriveMotor_init();
 	Steering_init();
@@ -103,25 +69,25 @@ int main(void)
 		Camera_capture();
 		
 		// figure out what direction should be pointing
+		float brightness_diff;
+		int num_dark;
+		measure_camera(&brightness_diff, &num_dark);
+		Tuning_update();
 		
-		Steering_set_direction(compute_direction());
-		// input new direction into PI loop
+		// Carpet Detection
+		// Stop car if on carpet
+		if (num_dark > CARPET_THRESHOLD)
+		{
+			DriveMotorA_set_duty_cycle(0, DIRECTION_FORWARD);
+			DriveMotorB_set_duty_cycle(0, DIRECTION_FORWARD);
+			DriveMotorA_enable(0);
+			DriveMotorB_enable(0);
+		}
 		
-		// use PI loop output to control steering
+		// enter error into PID loop and get result
+		float steering_input = pid_iterate(0, brightness_diff);
 		
-		// delay reasonably
-		//	delay(1);
-		
-                //uart0_put(str);
-		/*char str[100];
-                for (int i = 0; i < 128; i++) {
-                    sprintf(str,"%.2f ", Camera_get_light_level(i));
-                    uart0_put(str);
-                }
-								uart0_put("\r\n");*/
-								//delay(10);
-       
-		
-		
+		// (steering control is saturated inside this function)
+		Steering_set_direction(steering_input);
 	}
 }

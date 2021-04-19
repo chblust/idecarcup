@@ -1,0 +1,20 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define ENABLE 1
+#define SPEED 30
+
+#define DARK_THRESHOLD 0.2
+#define CARPET_THRESHOLD 120
+#define STEERING_MULTIPLIER .0035
+#define STEERING_START 0.4
+
+#define REQUIRED_DIFF 5
+
+#define DEFAULT_KP 0.5
+#define DEFAULT_KI 0.1
+#define DEFAULT_KD 0.25
+
+#define STEERING_SPEED_MULTIPLIER 0.5
+
+#endif
