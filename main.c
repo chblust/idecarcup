@@ -49,8 +49,11 @@ void delay(int del){
 
 int main(void)
 {
-	uart3_init();
+	uart0_init();
 	uart0_put("Waddup\r\n");
+	Tuning_init();
+	
+	
 	DriveMotor_init();
 	Steering_init();
 	Camera_init();

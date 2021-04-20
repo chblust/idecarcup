@@ -3,9 +3,9 @@
 #include "Config.h"
 #include <stdio.h>
 
-float kp = DEFAULT_KP;
-float ki = DEFAULT_KI;
-float kd = DEFAULT_KD;
+static float kp = DEFAULT_KP;
+static float ki = DEFAULT_KI;
+static float kd = DEFAULT_KD;
 
 void Tuning_init(void)
 {
@@ -39,10 +39,13 @@ void Tuning_update(void)
 		do{
 			c = UART3_D;
 			buf[i] = c;
+			uart0_putchar(c);
 			i++;
 		}while(c != '!');
+		buf[i] = 0; // null terminate
 		
-		scanf(buf, "p%fi%d", &kp, &ki, &kd);
+		scanf(buf, "p%fi%d!", &kp, &ki, &kd);
+		//uart0_put(buf);
 	}
 }
 
