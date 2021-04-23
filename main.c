@@ -32,7 +32,7 @@ static void measure_camera(float* brightness_error, int* num_dark)
 		}
 	}
 	
-	*brightness_error = left_sum - right_sum;
+	*brightness_error = right_sum - left_sum;
 }
 
 /**
@@ -51,7 +51,7 @@ int main(void)
 {
 	uart0_init();
 	uart0_put("Waddup\r\n");
-	Tuning_init();
+	//Tuning_init();
 	
 	
 	DriveMotor_init();
@@ -64,8 +64,8 @@ int main(void)
 	
 	DriveMotorA_enable(ENABLE);
 	DriveMotorB_enable(ENABLE);
-	DriveMotorA_set_duty_cycle(SPEED, DIRECTION_FORWARD);
-	DriveMotorB_set_duty_cycle(SPEED, DIRECTION_FORWARD);
+	//DriveMotorA_set_duty_cycle(SPEED, DIRECTION_FORWARD);
+	//DriveMotorB_set_duty_cycle(SPEED, DIRECTION_FORWARD);
 	//for(;;);
 	for(;;)
 	{
@@ -75,7 +75,12 @@ int main(void)
 		float brightness_diff;
 		int num_dark;
 		measure_camera(&brightness_diff, &num_dark);
-		Tuning_update();
+	  brightness_diff += 5.0;
+
+		//Tuning_update();
+		char buf[50];
+		sprintf(buf, "right-left: %f\r\n", brightness_diff);
+		uart0_put(buf);
 		
 		// Carpet Detection
 		// Stop car if on carpet
@@ -85,12 +90,35 @@ int main(void)
 			DriveMotorB_set_duty_cycle(0, DIRECTION_FORWARD);
 			DriveMotorA_enable(0);
 			DriveMotorB_enable(0);
+			for(;;);
 		}
 		
+		//if (brightness_diff < REQUIRED_DIFF)
+		//{
+		//	brightness_diff = 0;
+		//}
+		
 		// enter error into PID loop and get result
-		float steering_input = pid_iterate(0, brightness_diff);
+		float pid_out =  pid_iterate(0, brightness_diff);
+		float steering_input = pid_out + .5;
+		
+		//if (num_dark < 25)
+		//{
+		//steering_input = 0.5;
+	//	}
 		
 		// (steering control is saturated inside this function)
 		Steering_set_direction(steering_input);
+		if (pid_out > 1)
+		{
+			pid_out = 1;
+		}
+		else if (pid_out < 0)
+		{
+			pid_out = 0;
+		}
+		
+		DriveMotorB_set_duty_cycle(pid_out * MOTOR_CONST * MAX_SPEED, DIRECTION_FORWARD);
+		DriveMotorA_set_duty_cycle((1.0-pid_out)*MOTOR_CONST * MAX_SPEED, DIRECTION_FORWARD);
 	}
 }
