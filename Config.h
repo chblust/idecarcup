@@ -2,7 +2,7 @@
 #define CONFIG_H
 
 #define ENABLE 1
-#define MAX_SPEED 50
+#define MAX_SPEED 40
 
 #define DARK_THRESHOLD 0.2
 #define CARPET_THRESHOLD 120
