@@ -7,8 +7,8 @@
 #define FTM3_PRESCALER 125
 #define FTM3_MOD_VAL ((DEFAULT_SYSTEM_CLOCK/ FTM3_PRESCALER)/SERVO_FREQ_HZ)
 
-#define LEFT_DC 4.8
-#define	RIGHT_DC 8.0
+#define LEFT_DC 4.0
+#define	RIGHT_DC 8.1
 
 void Steering_init(void)
 {

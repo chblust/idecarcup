@@ -288,8 +288,7 @@ void Camera_capture(void)
 {
 	// pulse SI
 	GPIOB_PCOR |= (1 << 22);
-	// TODO- fix this it makes shit slow
-	for(int i = 0; i < 100000; i++);
+	for(int i = 0; i < 1000; i++);
 	GPIOB_PSOR |= (1 << 22);
 }
 
