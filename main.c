@@ -78,9 +78,9 @@ int main(void)
 	  brightness_diff += 5.0;
 
 		//Tuning_update();
-		char buf[50];
-		sprintf(buf, "right-left: %f\r\n", brightness_diff);
-		uart0_put(buf);
+		//char buf[50];
+		//sprintf(buf, "right-left: %f\r\n", brightness_diff);
+		//uart0_put(buf);
 		
 		// Carpet Detection
 		// Stop car if on carpet
@@ -109,16 +109,20 @@ int main(void)
 		
 		// (steering control is saturated inside this function)
 		Steering_set_direction(steering_input);
-		if (pid_out > 1)
+		if (pid_out > .5)
 		{
-			pid_out = 1;
+			pid_out = .5;
 		}
-		else if (pid_out < 0)
+		else if (pid_out < -.5)
 		{
-			pid_out = 0;
+			pid_out = -.5;
 		}
-		
-		DriveMotorB_set_duty_cycle(pid_out * MOTOR_CONST * MAX_SPEED, DIRECTION_FORWARD);
-		DriveMotorA_set_duty_cycle((1.0-pid_out)*MOTOR_CONST * MAX_SPEED, DIRECTION_FORWARD);
+		//DriveMotorB_set_duty_cycle(0,1);
+		//DriveMotorA_set_duty_cycle(0,1);
+		//char str[50];
+		//sprintf(str, "PID: %f\n\r", pid_out);
+		//uart0_put(str);
+		DriveMotorB_set_duty_cycle((.5+pid_out) * MOTOR_CONST * MAX_SPEED, DIRECTION_FORWARD);
+		DriveMotorA_set_duty_cycle((.5-pid_out)*MOTOR_CONST * MAX_SPEED, DIRECTION_FORWARD);
 	}
 }
