@@ -7,6 +7,8 @@
 #include "Config.h"
 #include "pid.h"
 #include "Tuning.h"
+#include "switch.h"
+#include "leds.h"
 
 static void measure_camera(float* brightness_error, int* num_dark)
 {
@@ -64,8 +66,38 @@ int main(void)
 	
 	DriveMotorA_enable(ENABLE);
 	DriveMotorB_enable(ENABLE);
-	//DriveMotorA_set_duty_cycle(SPEED, DIRECTION_FORWARD);
-	//DriveMotorB_set_duty_cycle(SPEED, DIRECTION_FORWARD);
+	DriveMotorA_set_duty_cycle(0, DIRECTION_FORWARD);
+	DriveMotorB_set_duty_cycle(0, DIRECTION_FORWARD);
+	
+	Switch2_Init();
+	Switch3_Init();
+	LED_Init();
+	
+	static int mode = MODE_AGGRESSIVE;
+	
+	// mode select
+	while(!Switch2_Pressed())
+	{
+		if (Switch3_Pressed())
+		{
+			while(Switch3_Pressed());
+			mode = (mode + 1) % 3;
+		}
+		
+		if (mode == MODE_AGGRESSIVE)
+		{
+			LED_On('r');
+		}
+		else if (mode == MODE_PASSIVE_AGGRESSIVE)
+		{
+			LED_On('y');
+		}
+		else 
+		{
+			LED_On('g');
+		}
+	}
+	
 	//for(;;);
 	for(;;)
 	{
@@ -122,7 +154,22 @@ int main(void)
 		//char str[50];
 		//sprintf(str, "PID: %f\n\r", pid_out);
 		//uart0_put(str);
-		DriveMotorB_set_duty_cycle((.5+pid_out) * MOTOR_CONST * MAX_SPEED, DIRECTION_FORWARD);
-		DriveMotorA_set_duty_cycle((.5-pid_out)*MOTOR_CONST * MAX_SPEED, DIRECTION_FORWARD);
+		float max_speed = 0;
+		
+		if (mode == MODE_AGGRESSIVE)
+		{
+				max_speed = AGGRESSIVE_SPEED;
+		}
+		else if (mode == MODE_PASSIVE_AGGRESSIVE)
+		{
+				max_speed = PASSIVE_AGGRESSIVE_SPEED;
+		}
+		else
+		{
+				max_speed = PASSIVE_SPEED;
+		}
+		
+		DriveMotorB_set_duty_cycle((.5+pid_out) * MOTOR_CONST * max_speed, DIRECTION_FORWARD);
+		DriveMotorA_set_duty_cycle((.5-pid_out)*MOTOR_CONST * max_speed, DIRECTION_FORWARD);
 	}
 }
