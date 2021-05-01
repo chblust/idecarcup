@@ -22,11 +22,14 @@ static void measure_camera(float* brightness_error, int* num_dark)
 		if (light_level < DARK_THRESHOLD)
 		{
 			(*num_dark)++;
+			light_level = -1;
 		}
 		
 		if (i < 127/2)
 		{
+			
 			right_sum += light_level;
+			
 		}
 		else
 		{
