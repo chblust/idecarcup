@@ -171,8 +171,14 @@ int main(void)
 		{
 				max_speed = PASSIVE_SPEED;
 		}
-		
-		DriveMotorB_set_duty_cycle((.5+pid_out) * MOTOR_CONST * max_speed, DIRECTION_FORWARD);
-		DriveMotorA_set_duty_cycle((.5-pid_out)*MOTOR_CONST * max_speed, DIRECTION_FORWARD);
+		float a_speed = (.5-pid_out) * MOTOR_CONST * max_speed;
+        float b_speed = (.5+pid_out) * MOTOR_CONST * max_speed;
+        if (fabs(pid_out) > .35) {
+            DriveMotorB_set_duty_cycle((3 * b_speed / 4), DIRECTION_FORWARD);
+            DriveMotorA_set_duty_cycle((3 * a_speed / 4), DIRECTION_FORWARD);
+        } else {
+            DriveMotorB_set_duty_cycle(b_speed, DIRECTION_FORWARD);
+            DriveMotorA_set_duty_cycle(a_speed, DIRECTION_FORWARD);
+        }
 	}
 }
