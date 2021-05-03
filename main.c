@@ -100,6 +100,30 @@ int main(void)
 			LED_On('g');
 		}
 	}
+    float max_speed = 0;
+    
+    if (mode == MODE_AGGRESSIVE)
+    {
+            max_speed = AGGRESSIVE_SPEED;
+    }
+    else if (mode == MODE_PASSIVE_AGGRESSIVE)
+    {
+            max_speed = PASSIVE_AGGRESSIVE_SPEED;
+    }
+    else
+    {
+            max_speed = PASSIVE_SPEED;
+    }
+    float multiplier;
+    if (max_speed == AGGRESSIVE_SPEED) {
+        // multiplier = 65/100;
+        multiplier = 9/10;
+    } else if (max_speed == PASSIVE_AGGRESSIVE_SPEED) {
+        // multiplier = 9/10;
+        multiplier = 1;
+    } else {
+        multiplier = 1;
+    }
 	
 	//for(;;);
 	for(;;)
@@ -157,25 +181,13 @@ int main(void)
 		//char str[50];
 		//sprintf(str, "PID: %f\n\r", pid_out);
 		//uart0_put(str);
-		float max_speed = 0;
-		
-		if (mode == MODE_AGGRESSIVE)
-		{
-				max_speed = AGGRESSIVE_SPEED;
-		}
-		else if (mode == MODE_PASSIVE_AGGRESSIVE)
-		{
-				max_speed = PASSIVE_AGGRESSIVE_SPEED;
-		}
-		else
-		{
-				max_speed = PASSIVE_SPEED;
-		}
 		float a_speed = (.5-pid_out) * MOTOR_CONST * max_speed;
         float b_speed = (.5+pid_out) * MOTOR_CONST * max_speed;
-        if (fabs(pid_out) > .35) {
-            DriveMotorB_set_duty_cycle((3 * b_speed / 4), DIRECTION_FORWARD);
-            DriveMotorA_set_duty_cycle((3 * a_speed / 4), DIRECTION_FORWARD);
+        if (fabs(pid_out) > .395) {
+            DriveMotorB_set_duty_cycle((b_speed * multiplier), DIRECTION_FORWARD);
+            DriveMotorA_set_duty_cycle((a_speed * multiplier), DIRECTION_FORWARD);
+            // DriveMotorB_set_duty_cycle((3 * b_speed / 4), DIRECTION_FORWARD);
+            // DriveMotorA_set_duty_cycle((3 * a_speed / 4), DIRECTION_FORWARD);
         } else {
             DriveMotorB_set_duty_cycle(b_speed, DIRECTION_FORWARD);
             DriveMotorA_set_duty_cycle(a_speed, DIRECTION_FORWARD);
