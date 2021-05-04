@@ -275,7 +275,6 @@ void init_ADC0(void) {
   NVIC_EnableIRQ(ADC0_IRQn);
 }
 
-
 void Camera_init(void)
 {
 		init_GPIO(); // For CLK and SI output on GPIO
@@ -294,6 +293,8 @@ void Camera_capture(void)
 
 float Camera_get_light_level(unsigned int addr)
 {
+	// saturate input to 0-127
 	addr = addr % 128;
+	// map adc reading to 0-1
 	return ((float) line[addr]) / 4095.0;
 }
