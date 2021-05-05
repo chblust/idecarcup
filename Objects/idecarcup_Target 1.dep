@@ -1,0 +1,129 @@
+Dependencies for Project 'idecarcup', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6160000::V6.16::ARMCLANG
+F (.\DriveMotor.c)(0x60908B97)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/drivemotor.o -MD)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\MK64F12.h)(0x585C24CA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60364D68)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1DE12)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60364D64)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\system_MK64F12.h)(0x5404B3D0)
+I (DriveMotor.h)(0x60908AB6)
+F (.\DriveMotor.h)(0x60908AB6)()
+F (.\Steering.c)(0x60908E14)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/steering.o -MD)
+I (Steering.h)(0x60908D51)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\MK64F12.h)(0x585C24CA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60364D68)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1DE12)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60364D64)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\system_MK64F12.h)(0x5404B3D0)
+I (DriveMotor.h)(0x60908AB6)
+F (.\Steering.h)(0x60908D51)()
+F (.\main.c)(0x60909307)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/main.o -MD)
+I (DriveMotor.h)(0x60908AB6)
+I (Steering.h)(0x60908D51)
+I (Camera.h)(0x6091C92A)
+I (uart.h)(0x6091CAC7)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\MK64F12.h)(0x585C24CA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60364D68)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1DE12)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60364D64)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\system_MK64F12.h)(0x5404B3D0)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60364D68)
+I (C:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x60364D68)
+I (Config.h)(0x6091CBD7)
+I (pid.h)(0x6091CD9C)
+I (Tuning.h)(0x6091CE1C)
+I (switch.h)(0x6091CED0)
+I (leds.h)(0x6091CE88)
+F (.\Camera.c)(0x6091CA16)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/camera.o -MD)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\MK64F12.h)(0x585C24CA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60364D68)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1DE12)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60364D64)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\system_MK64F12.h)(0x5404B3D0)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60364D68)
+I (Camera.h)(0x6091C92A)
+F (.\Camera.h)(0x6091C92A)()
+F (.\uart.c)(0x6090893E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/uart.o -MD)
+I (uart.h)(0x6091CAC7)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\MK64F12.h)(0x585C24CA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60364D68)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1DE12)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60364D64)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\system_MK64F12.h)(0x5404B3D0)
+F (.\uart.h)(0x6091CAC7)()
+F (.\Config.h)(0x6091CBD7)()
+F (.\pid.c)(0x6091CD11)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/pid.o -MD)
+I (pid.h)(0x6091CD9C)
+I (Config.h)(0x6091CBD7)
+I (Tuning.h)(0x6091CE1C)
+F (.\pid.h)(0x6091CD9C)()
+F (.\Tuning.c)(0x6091CDC6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/tuning.o -MD)
+I (Tuning.h)(0x6091CE1C)
+I (uart.h)(0x6091CAC7)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\MK64F12.h)(0x585C24CA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60364D68)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1DE12)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60364D64)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\system_MK64F12.h)(0x5404B3D0)
+I (Config.h)(0x6091CBD7)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60364D68)
+F (.\Tuning.h)(0x6091CE1C)()
+F (.\leds.c)(0x6090893E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/leds.o -MD)
+I (leds.h)(0x6091CE88)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\MK64F12.h)(0x585C24CA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60364D68)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1DE12)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60364D64)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\system_MK64F12.h)(0x5404B3D0)
+F (.\leds.h)(0x6091CE88)()
+F (.\switch.h)(0x6091CED0)()
+F (.\switch.c)(0x6090893E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/switch.o -MD)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\MK64F12.h)(0x585C24CA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60364D68)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1DE12)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60364D64)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\system_MK64F12.h)(0x5404B3D0)
+I (switch.h)(0x6091CED0)
+F (RTE\Device\MK64FN1M0xxx12\startup_MK64F12.s)(0x6090893E)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto -c-gdwarf-3 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 534" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"MK64FN1M0xxx12 SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_mk64f12.o)
+F (RTE\Device\MK64FN1M0xxx12\system_MK64F12.c)(0x6090893E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/chblu/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/chblu/AppData/Local/Arm/Packs/Keil/Kinetis_K60_DFP/1.5.0/Device/Include-D__UVISION_VERSION="534" -D_RTE_ -DMK64FN1M0xxx12 -D_RTE_-o ./objects/system_mk64f12.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x60364D68)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\MK64F12.h)(0x585C24CA)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1DE12)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x60364D64)
+I (C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include\system_MK64F12.h)(0x5404B3D0)

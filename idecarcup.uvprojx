@@ -453,6 +453,26 @@
               <FileType>5</FileType>
               <FilePath>.\Tuning.h</FilePath>
             </File>
+            <File>
+              <FileName>leds.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\leds.c</FilePath>
+            </File>
+            <File>
+              <FileName>leds.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\leds.h</FilePath>
+            </File>
+            <File>
+              <FileName>switch.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\switch.h</FilePath>
+            </File>
+            <File>
+              <FileName>switch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\switch.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

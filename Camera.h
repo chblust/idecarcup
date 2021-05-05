@@ -1,6 +1,10 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
+/**
+* Configure timers and GPIO required to use the 1D camera.
+*
+*/
 void Camera_init(void);
 
 /**
@@ -10,6 +14,11 @@ void Camera_init(void);
 **/
 float Camera_get_light_level(unsigned int addr);
 
+/**
+* Initiate another camera capture.
+* Results will not be immediately available
+*
+*/
 void Camera_capture(void);
 
 #endif

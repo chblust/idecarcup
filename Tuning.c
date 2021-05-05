@@ -28,7 +28,8 @@ float Tuning_get_kd(void)
 }
 
 // protocol: p<kp float value>i<ki float value>d<kd float value>!
-// you better send the whole damn string at once or this will lock up the micro
+// you better send the whole string at once or this will lock up the micro
+// untested, good luck
 void Tuning_update(void)
 {
 	if (UART3_S1 & UART_S1_RDRF_MASK)
